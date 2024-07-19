@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==4.2.13"
+pillow = "==10.3.0"
+social-auth-app-django = "==5.4.1"
+django-extensions = "==3.2.3"
+werkzeug = "==3.0.3"
+pyopenssl = "==24.1.0"
+requests = "==2.32.3"
+notebook = "*"
+easy-thumbnails = "==2.8.5"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

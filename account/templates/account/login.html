@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Please follow the following form to authenticate. If you don't have an account, click <a href="{% url 'register' %}">here</a> to register</h1>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
