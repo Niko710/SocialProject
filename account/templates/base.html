@@ -17,6 +17,7 @@
 
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="{% url 'images:list' %}" class="nav-link">Images</a></li>
+        <li class="nav-item"><a href="{% url 'user_list' %}" class="nav-link">Users</a></li>
         {% if request.user.is_authenticated %}
         <li class="nav-item"><a href="{% url 'dashboard' %}" {% if section == 'dashboard' %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} >My dashboard</a></li>
         <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Log out</a></li>

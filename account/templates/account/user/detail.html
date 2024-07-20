@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h1>{{ user.get_full_name }}</h1>
+    <div>
+        <img src="{% thumbnail user.profile.photo 180x180 %}" alt="">
+    {% with total_followers=user.followers.count %}
+        <span>
+            <span id="total">{{ total_followers }}</span>
+            follower{{ total_followers|pluralize }}
+        </span>
+        {% with followers=user.followers.all %}
+
+        <a href="" data-action="{% if user in followers %}Un{% endif %}like" data-id="{{ user.id }}">
+        {% if user in followers %}
+            Unfollow
+        {% else %}
+            Follow
+        {% endif %}
+        </a>
+        {% endwith %}
+    {% endwith %}
+    <div id="images">
+        {% include 'images/image/list_images.html' with images=user.images_created.all %}
+    </div>
+    </div>
+</div>
+{% endblock %}
